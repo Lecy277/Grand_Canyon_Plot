@@ -1,0 +1,16 @@
+set view 65, 8,1.20,1.05
+set yrange [0:75]
+set xrange [0:75]
+set zrange [0:75]
+set xlabel "RED Line Shows DIJKSTRA'S"
+set format y "" 
+unset xtics
+unset ztics
+set hidden3d
+set border 4095 front linetype -1 linewidth 1.05
+set terminal pngcairo  transparent enhanced font "arial,10" fontscale 1.0 size 600, 400
+set cblabel "color scale" 
+set pm3d implicit at s 
+set palette defined ( 0 "dark-blue", 1 "sienna4",2 "sienna4", 3 "sienna4", 4 "dark-green")
+set output 'Grand_Canyon.png'
+splot 'Triangles.dat'using 1:2:3 notitle with lines lc rgb "green",'Triangles3.dat'using 1:2:3 notitle with lines lc rgb "sandybrown",'Triangles2.dat'using 1:2:3 notitle with lines lc rgb "green",'Triangles4.dat'using 1:2:3 notitle with lines lc rgb "sandybrown",'TrianglesDyk.dat'using 1:2:3 notitle with lines lc rgb "red",'Triangles5.dat'using 1:2:3 notitle with lines lc rgb "blue"
